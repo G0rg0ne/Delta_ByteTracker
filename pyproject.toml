@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "delta-tracker"
+version = "0.1.0"
+description = ""
+authors = ["G0rg0ne"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+jupyter = "*"
+jupyterlab_server = "*"
+jupyterlab = "*"
+pyrootutils = "*"
+loguru = "*"
+
+[tool.poetry.dev-dependencies]
+black = { extras = ["jupyter"], version = "*" }
+flake8 = "*"
+ipython = "*"
+isort = "*"
+mypy = "*"
+pylint = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+pytest-pylint = "*"
+pytest-mypy = "*"
+pytest-testmon = "*"
+pytest-xdist = "*"
+nbmake = "*"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
