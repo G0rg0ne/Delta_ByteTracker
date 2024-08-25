@@ -34,7 +34,7 @@ RUN git clone https://github.com/ifzhang/ByteTrack \
     && pip3 install cython_bbox gdown \
     && ldconfig \
     && pip cache purge
-    
+
 
 RUN git clone https://github.com/NVIDIA-AI-IOT/torch2trt \
     && cd torch2trt \
@@ -52,3 +52,5 @@ RUN echo "root:root" | chpasswd \
 USER ${USERNAME}
 RUN sudo chown -R ${USERNAME}:${USERNAME} ${WORKDIR}
 WORKDIR ${WORKDIR}
+
+RUN export PYTHONPATH="src/delta_tracker/"

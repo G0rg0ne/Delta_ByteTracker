@@ -4,3 +4,5 @@ videos/*
 
 #Model's checkpoint / Model zoo
 pretrained/*
+
+YOLOX_outputs
