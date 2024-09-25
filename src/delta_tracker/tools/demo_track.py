@@ -166,7 +166,6 @@ class Predictor(object):
         with torch.no_grad():
             timer.tic()
             outputs = self.model(img)
-            
             if self.decoder is not None:
                 outputs = self.decoder(outputs, dtype=outputs.type())
             outputs = postprocess(
@@ -258,8 +257,10 @@ def imageflow_demo(predictor, vis_folder, current_time, args):
         if frame_id % 20 == 0:
             logger.info('Processing frame {} ({:.2f} fps)'.format(frame_id, 1. / max(1e-5, timer.average_time)))
         ret_val, frame = cap.read()
+        
         if ret_val:
             outputs, img_info = predictor.inference(frame, timer)
+            import pdb;pdb.set_trace()
             if outputs[0] is not None:
                 online_targets = tracker.update(outputs[0], [img_info['height'], img_info['width']], exp.test_size)
                 online_tlwhs = []
